@@ -1,0 +1,30 @@
+<!-- This form takes HTML from base.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Sign In</h1>
+<form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+        Please login with one of the providers below:<br>
+        {% for message in get_flashed_messages() %}
+            <span style="color: red;">[{{ message }}]</span>
+        {% endfor %} <br>
+        {% if current_user.is_authenticated %}
+            <h2>Hi, {{ current_user.nickname }}</h2>
+            <p><a href = "{{ url_for('logout') }}">Logout</a></p>
+        {% else %}
+            <h2>I don't know you! Please log in, dog!</h2>
+            <p>Login (your username):   {{ form.login_id(size=80) }}</p>
+            <p>Email:   {{ form.email(size=80) }}</p>
+            <p>Password:   {{ form.password(size=80) }}</p>
+            <p>{{ form.remember_me }} Remember Me</p>
+            <p>{{ form.submit() }}</p>
+            <br>
+            <p><a href = "{{ url_for('oauth_authorize', provider = 'facebook') }}">Login with Facebook</a></p>
+        {% endif %}
+    </p>
+</form>
+
+{% endblock %}

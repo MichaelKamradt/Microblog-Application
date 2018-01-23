@@ -1,0 +1,23 @@
+<div class="card">
+    <img class="card-img-top" src="{{ user.avatar(128) }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.author.nickname }}</h5>
+        <p class="card-text"><span id="post{{ post.id }}">{{ post.body }}</span></p>
+        <img id="loading{{ post.id }}" style="display: none" src="/static/img/loading.gif">
+    </div>
+    <div class="card-footer text-muted">
+        <div class='row'>
+            <div class='col-sm'>
+                {{ moment(post.timestamp).fromNow() }}
+                {% if post.user_id == current_user.id %}<p><a href="{{ url_for('delete_post', id=post.id) }}">Delete Post</a></p>{% endif %}
+            </div>
+            {% if post.language != None and post.language != '' and post.language != current_user.locale %}
+            <div class='col-sm'>
+                <div class='d-flex justify-content-end'>
+                    <small><span id="translation{{ post.id }}"><a  href="javascript:translate('{{ current_user.locale }}', '#post{{ post.id }}', '#translation{{ post.id }}', '#loading{{ post.id }}');">Translate</a></span></small>
+                </div>
+            </div>
+            {% endif %}
+    </div>
+    </div>
+</div>

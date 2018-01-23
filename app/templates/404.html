@@ -1,0 +1,8 @@
+<!-- presented when a 404 error is thrown -->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>File not found</h1>
+    <p><a href="{{ url_for('index') }}">Back</a></p>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Hi, {{ user.nickname }}!</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+            <br>
+            <p><b>Say something... </b>{{ form.post(size=30, maxlength=140, description="Say something...") }}</p>
+            <p>
+                {% for error in form.post.errors %}
+                <span style="color:red,">[{{ error }}]</span><br>
+                {% endfor %}
+            </p>
+        <br>
+        <p>
+            <button type="submit" class="btn btn-primary">Say it!</button>
+        </p>
+    </form>
+    <div class="card-deck">
+        {% for post in posts.items %}
+            {% include 'post.html' %}
+        {% endfor %}
+    </div>
+    <br>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            {% if posts.has_prev %}<li class="page-item"><a class="page-link" href="{{ url_for('index', page = posts.prev_num) }}">Newer</a></li>{% else %}<li class="page-item"><a class="page-link">Newer</a></li>{% endif %}
+            {% if posts.has_next %}<li class="page-item"><a class="page-link" href="{{ url_for('index', page = posts.next_num) }}">Older</a></li>{% else %}<li class="page-item"><a class="page-link">Older</a></li>{% endif %}
+        </ul>
+    </nav>
+{% endblock %}

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "flask-project-26",
+  "private_key_id": "54fabe24ec24c494ee529e31664d12bd1a1bf2b6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC73eE8i/KY6bca\n+lprWu3QzC1CjE+hVZBI+kMfRXVCaqlGpQzWua4nKFJoJPFQ+Vn1m19abCSoI9BA\nPT8emF6HNPzOVKwwdlnVfDdA7tPatunTJY/maD6i4WHDTK3QSu0TUbxEwHTym7d4\nZW+p3zTuAaQ5KC7bxyr+XaWe2EkxXvB4MG3PonVcOLHoCTl8DgBylXEzNM2r7Q9p\nqFidq5xJzWgZ1y5VzC7WKeK4NTtSAvmJJC8jGDWpSUvyqlkcc4cDiuIXrUTlLVkG\nm9HG6/xHswRxREGju+Dh47UAC0quqJzxYQAr8qcxdHe0t1asVm6i0CLEGaKRJ1Uk\n25EkiXx1AgMBAAECggEAEKuqOnyyrNYEbQztLByYANC1bXPU9xyIHqmyfhpkQt4D\nImUwA/fbF9dwpJQuo8BUtsIwTm5NPGxdJO4qZTUhIj9V9Zs24mAGLbcFkin/O6fC\njP2GzOvQLxTv32w0+khDzFSS78jiN8sQl0rtAzZu1HXp1DaYHeGJE6RMt5E6wXoj\n0QPMkYyUofWBUzY442KJOuCPY3nsL9CMj45LSTtIX/uuJBg2NP4fum/HryMFpEiS\nsUWrYpgIPrujVV3cvk7+G+28+HTuK2jeIEOm5ZQVkP/HXjqXYucvSKsFe8AioaSn\nlUMNIErZsHkhsCKVpcV4UtehsAIjIrlHsDXam0Ta6wKBgQDeHl9makbaXfa+NTtQ\nTK+04oYqJqXYp9lAFHAJ3y/+QfloD7NC2JlDnMwHrInaWIW+WKu7MHEjF+VxBqES\nU9/xXOo2yqU6LROG2e+MDq4A4ztu931Yl0DSPW88YE1A7dIpyl+uf86Qr6DklxLA\ns+2cBEtVxpvBSeBVWRKB6Qo6awKBgQDYhfxc+mHIRC2Dl1sJGFO5qUrkLYm2JP6C\ncmPI2vBgXlNYa5Xw8EZ/hpmQWMivHoA0IYJ7jUFqLbu3fEg4fcwyw0UAVusXzNrT\njipnyACRO91/KDWM3tm8krOLrD0m4egGpWGpkNlzyzz5YpxXciR0fXYkAxytRkpk\ng89zVEKcnwKBgG9iC7Tv1lfqhrEbQIMj8Xhjn6PDfacHhIn9tbE9mnOF4eus89ex\nhinBlw7CFt7HRUoObQ+RWyqd8RCcomjuZn5CebDALdref8w/vUAenGMVj9g1g0XJ\nk1faNs2v/Q1yNNGACjsXHB6x85ytpVm84Io8HQsGbVSgFz61S/KZSefBAoGAIvD8\nWMTPItJdxe6W8lDKshtvyoLOxmYR7FspXzB1uhd+u7Yg7FDaD5pZDcJGIHx7k+4U\ncHvLIqdes62KuhMS8N4yNGvSZHTam2lFzpmn/cf7ZpnGioUr/hJuhwu0kqHCH9Bw\ngjyt2tHhdR1EvZfd6i6U8hrOdefx+WaMA8CFP2ECgYA8Xz44E5dRwDprXrGmg6HA\n9LDQULUu6js+0hnGSENXXexU8WLL4P86oOYBl8NSG+LXKaIna/jPKes1cVRiE31G\nYJx4S5E0kwAMCYCi60inYj73JLE3cEG6DhHoDeT3yfqJivW0ONSWHAyq8hmkPs+g\nyyF6A7qG/1gMeG+XAoHaxw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "microblog@flask-project-26.iam.gserviceaccount.com",
+  "client_id": "106713551023556186351",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/microblog%40flask-project-26.iam.gserviceaccount.com"
+}

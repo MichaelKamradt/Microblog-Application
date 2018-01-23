@@ -1,0 +1,70 @@
+<html>
+  <head lang="en">
+    {% if title %}
+    <title>{{ title }} - microblog</title>
+    {% else %}
+    <title>Welcome to microblog</title>
+    {% endif %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+  </head>
+  <body>
+  <div class="container">
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">Microblog</a>
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+            {% if current_user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('user', nickname=current_user.nickname) }}">Your Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  {{ moment.include_moment() }}
+  <script>
+    function translate(destLang, sourceId, destId, loadingId) {
+      $(destId).hide();
+      $(loadingId).show();
+      $.post('/translate', {
+          text: $(sourceId).text(),
+          destLang: destLang
+      }).done(function(translated) {
+          $(destId).text(translated['text'])
+          $(loadingId).hide();
+          $(destId).show();
+      }).fail(function() {
+          $(destId).text("{{ _('Error: Could not contact server.') }}");
+          $(loadingId).hide();
+          $(destId).show();
+      });
+  }
+  </script>
+  </body>
+</html>
