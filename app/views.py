@@ -7,7 +7,7 @@ from .models import User, Post
 from datetime import datetime
 from config import POSTS_PER_PAGE, LANGUAGES, DATABASE_QUERY_TIMEOUT
 from .emails import follower_notifications
-from guess_language import guessLanguage
+from guess_language import guess_language
 from flask import jsonify
 from .translate import translate_text
 from flask_sqlalchemy import get_debug_queries
@@ -28,7 +28,7 @@ def before_request():
 def index(page=1):
     form = PostForm()
     if form.validate_on_submit():
-        language = guessLanguage(form.post.data)
+        language = guess_language(form.post.data)
         if language == 'UNKNOWN' or len(language) > 5:
             language = ''
         post = Post(body = form.post.data, timestamp = datetime.utcnow(), author = current_user, language=language)
