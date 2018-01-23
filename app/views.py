@@ -37,7 +37,7 @@ def index(page=1):
         flash('You just said something!')
         return redirect(url_for('index')) # Go back to the page so that hitting the reset button doesn't resubmit the form
     posts = current_user.followed_posts().paginate(page, POSTS_PER_PAGE, False)
-    return render_template('index.html', title = 'Muthafuckin', form=form, user=current_user, posts = posts)
+    return render_template('index.html', title = 'Kamradt', form=form, user=current_user, posts = posts)
 
 @app.route('/login', methods = ['GET', 'POST']) # The methods decorators tell Flask that this view function can get and post requests (otherwise it'll only be GET requests). This needs to bring form data in
 def login():
