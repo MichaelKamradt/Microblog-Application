@@ -17,4 +17,5 @@ WTForms==2.1
 unittest
 datetime
 hashlib
+guess-language-spirit==0.5a4
 google-cloud-translate==1.3.0
