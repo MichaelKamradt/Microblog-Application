@@ -5,6 +5,7 @@ from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_
 from flask_mail import Mail
 from flask_moment import Moment
 from flask_babel import Babel
+import os
 
 app = Flask(__name__) # Create the application from the class 'Flask'
 app.config.from_object('config') # With a config file present, we need to tell Flask to find it and use it
