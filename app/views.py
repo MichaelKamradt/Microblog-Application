@@ -27,7 +27,10 @@ def before_request():
 def index(page=1):
     form = PostForm()
     if form.validate_on_submit():
-        language = detect_text(form.post.data)
+        try:
+            language = detect_text(form.post.data)
+        except:
+            language = 'en'
         if language == 'UNKNOWN' or len(language) > 5:
             language = ''
         post = Post(body = form.post.data, timestamp = datetime.utcnow(), author = current_user, language=language)
