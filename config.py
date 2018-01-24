@@ -5,7 +5,7 @@ basedir = os.path.abspath(os.path.dirname(__file__)) # Basedir is the current di
 if os.environ.get('DATABASE_URL') is None:
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db') # Making the app database
 else:
-    SQLALCHEMY_DATABASE_URI['DATABASE_URL']
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository') # Location of the repository where the migrated files will go
 SQLALCHEMY_TRACK_MODIFICATIONS = False # This is being depricated
