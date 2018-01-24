@@ -2,7 +2,11 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__)) # Basedir is the current directory
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db') # Making the app database
+if os.environ.get('DATABASE_URL') is None:
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db') # Making the app database
+else:
+    SQLALCHEMY_DATABASE_URI['DATABASE_URL']
+
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository') # Location of the repository where the migrated files will go
 SQLALCHEMY_TRACK_MODIFICATIONS = False # This is being depricated
 SQLALCHEMY_RECORD_QUERIES = True # Writes down when a query takes too long
